@@ -1,0 +1,14 @@
+
+h1 Blog
+form.form-inline(ng-submit="createPost()")
+    input.form-control(type="text", ng-model="formData.title", placeholder="title")
+    input.form-control(type="text", ng-model="formData.text", placeholder="text")
+    button(type="submit").btn.btn-default enviar
+hr
+.row(ng-repeat="p in posts")
+    .col-xs-6
+        h4 {{p.title}}
+        p {{p.text}}
+    .col-xs-6
+        pre {{p | json}}
+alert.alert.alert-warning.col-xs-12(ng-if="!posts") No hay posts

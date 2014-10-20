@@ -1,0 +1,7 @@
+div(ng-controller="BlogHLC")  
+    h1 Blog
+    .row(ng-repeat="p in posts")
+        .col-xs-12.well
+            h4 {{p.title}}
+            p {{p.text}}
+    alert.alert.alert-warning.col-xs-12(ng-if="!posts") No hay posts
